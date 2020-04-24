@@ -1,0 +1,209 @@
+# Comandos de la Práctica 01
+# Natalia Abasolo Cortés
+
+#Parte I.
+1.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01
+$ echo $0
+-bash
+
+2.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01
+$ mkdir data/ filtered/ raw_data/ meta/ scripts/ figures/ archive/
+3.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01
+$ mv filtered/ data/
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01
+$ mv raw_data/ data/
+
+4.¿A qué se debe el nombre y la organización de los directorios que acabamos de crear? 
+A que va a ser el directorio donde pondremos los datos para hacer un análisis bioinformático
+y los directorios creados tienen un propósito específico para una organización eficiente
+en el proyecto.
+
+#Parte II.
+1.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/scripts
+$ chmod u+x delay.sh
+
+2.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/scripts
+$ ls -l delay.sh
+-rwxr--r--+ 1 Natt Natt 127 Mar 30 16:03 delay.sh
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/scripts
+$ ./delay.sh
+Después de la Parte I. necesito 1/2 minuto de descanso, que son exactamente 30 segundos.
+Ahora sí, con todo!
+
+3.
+echo "Después de la Parte I. necesito 1/2 minuto de descanso, que son exactamente 30 segundos."
+sleep 30
+echo "Ahora sí, con todo!"
+
+Hubo un retraso de 30 segundos para que apareciera la segunda parte del texto
+
+4.
+echo "Después de la Parte I. necesito 1/2 minuto de descanso, que son exactamente 30 segundos."
+sleep 300
+echo "Ahora sí, con todo!"
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/scripts
+$ ./delay.sh &
+[1] 521
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/scripts
+$ Después de la Parte I. necesito 1/2 minuto de descanso, que son exactamente 30 segundos.
+kill 521
+
+#Parte III
+1.        #*Estructura molecular del COVID-19*
+Este patógeno posee espículas que le dan forma de "corona". Producen enfermedades tanto
+en humanos como en animales y son comúnmente en el tracto respiratorio, gastrointestinales
+y del sistema nervioso central.
+Este Coronavirus pertenece al Género Betacoronavirus y la estructura de su genoma constituido
+por un marco de lectura abierto que codifica para proteínas no estructurales, proteína S
+(o espícula), proteínas de membrana y la proteína N, permitiendo identificar el análisis
+filogenético que pudo relacionarlo con el de los murciélagos con un intermediario aún
+no encontrado.
+Es un RNA de cadena sencilla positiva enrollada en una nucleocápside, envuelto por la
+proteína de envoltura (glicoproteína de membrana) junto con las espículas que son 
+proteína S. Todo en conjunto va de 50-200nm.
+
+
+2.        #*Función de SARS-CoV-2 spike ectodomain structure*
+Es una estructura que ayuda a la entrada del coronavirus hacia las células hospederas.
+Estas se unen a un receptor en la superficie de la célula huésped a través de la subunidad
+S1 y luego fusiona las membranas virales y del huésped mediante la subunidad S2.
+
+3.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop
+$ mv sequence.gff3 genomica_2020-2/nabasolo_p01/data/raw_data/ 
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop
+$ mv sequence.fasta genomica_2020-2/nabasolo_p01/data/raw_data/ && mv sequence_1.fasta genomica_2020-2/nabasolo_p01/data/raw_data/
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop
+$ mv sequence_2.fasta genomica_2020-2/nabasolo_p01/data/raw_data/ && mv sequence_3.fasta genomica_2020-2/nabasolo_p01/data/raw_data/
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop
+$ mv sra_data.fasta.gz genomica_2020-2/nabasolo_p01/data/raw_data/ && mv sra_data.fastq.gz genomica_2020-2/nabasolo_p01/data/raw_data/
+
+#Parte IV
+1. 
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ ln -s /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/raw_data/sequence_1.fasta .
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ ln -s /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/raw_data/sequence_2.fasta .
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ ln -s /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/raw_data/sequence_3.fasta .
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ ln -s /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/raw_data/sequence.fasta .
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ ln -s /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/raw_data/sequence.gff3 .
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ ln -s /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/raw_data/sra_data.fasta .
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ ln -s /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/raw_data/sra_data.fastq .
+
+2.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ mv /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered/sequence_1.fasta proteins
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ mv /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered/sequence_2.fasta proteins
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ mv /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered/sequence_3.fasta proteins
+
+3.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered/proteins
+$ touch glycoproteins.faa.txt
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered/proteins
+$ head -2 sequence_1.fasta
+>pdb|6VYB|C Chain C, spike glycoprotein
+MGILPSPGMPALLSLVSLLSVLLMGCVAETGTQCVNLTTRTQLPPAYTNSFTRGVYYPDKVFRSSVLHST
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered/proteins
+$ head -2 sequence_2.fasta
+>pdb|6VYB|B Chain B, spike glycoprotein
+MGILPSPGMPALLSLVSLLSVLLMGCVAETGTQCVNLTTRTQLPPAYTNSFTRGVYYPDKVFRSSVLHST
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered/proteins
+$ head -2  sequence_3.fasta
+>pdb|6VYB|A Chain A, spike glycoprotein
+MGILPSPGMPALLSLVSLLSVLLMGCVAETGTQCVNLTTRTQLPPAYTNSFTRGVYYPDKVFRSSVLHST
+
+4.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered/proteins
+$ less sequence_1.fasta sequence_2.fasta sequence_3.fasta > glycoproteins.faa.txt
+
+5.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ head -5 sequence.fasta
+>NC_045512.2 Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1, complete genome
+ATTAAAGGTTTATACCTTCCCAGGTAACAAACCAACCAACTTTCGATCTCTTGTAGATCTGTTCTCTAAA
+CGAACTTTAAAATCTGTGTGGCTGTCACTCGGCTGCATGCTTAGTGCACTCACGCAGTATAATTAATAAC
+TAATTACTGTCGTTGACAGGACACGAGTAACTCGTCTATCTTCTGCAGGCTGCTTACGGTTTCGTCCGTG
+TTGCAGCCGATCATCAGCACATCTAGGTTTCGTCCGGGTGTGACCGAAAGGTAAGATGGAGAGCCTTGTC
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ zless sra_data.fasta | head -5
+>SRR11241254.1.1 1 length=40
+GTTAAAGGTTTATACCTTCCCAGGTAACAAACCAACCAAC
+>SRR11241254.2.1 2 length=40
+GTTAAAGGTTTATACCTTCCCAGGTAACAAACCAACCAAC
+>SRR11241254.3.1 3 length=40
+
+6.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ grep '>' sequence.fasta
+>NC_045512.2 Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1, complete genome
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ zless sra_data.fasta | grep '>' | head -5
+>SRR11241254.1.1 1 length=40
+>SRR11241254.2.1 2 length=40
+>SRR11241254.3.1 3 length=40
+>SRR11241254.4.1 4 length=40
+>SRR11241254.5.1 5 length=40
+
+7.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ zless sra_data.fastq | head -12
+@SRR11241254.1.1 1 length=40
+GTTAAAGGTTTATACCTTCCCAGGTAACAAACCAACCAAC
++SRR11241254.1.1 1 length=40
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+@SRR11241254.2.1 2 length=40
+GTTAAAGGTTTATACCTTCCCAGGTAACAAACCAACCAAC
++SRR11241254.2.1 2 length=40
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+@SRR11241254.3.1 3 length=40
+GTTAAAGGTTTATACCTTCCCAGGTAACAAACCAACCAAC
++SRR11241254.3.1 3 length=40
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ zless sra_data.fastq | grep '@'
+
+8. En los dos se representan cadenas de aminoácidos como de nucleotidos.
+El formato FASTA es una representación simple de los elementos de las secuencias
+utilizando letras (los estándares C, G, T y A para nucleótidos de ADN y otras letras 
+para usos especiales, así como un conjunto de letras para péptidos en aminoácidos),
+mientras que FASTQ también codifica puntuaciones de calidad para los datos.
+9.
+less sequence.gff3
+El contenido del archivo se encuentra desorganizado y sin formato alguno 
+
+less -S sequence.gff3
+El contenido del archivo se encuentra organizado por columnas específicas
+
+10.
+Natt@NattAC /cygdrive/c/Users/Natt/Desktop/genomica_2020-2/nabasolo_p01/data/filtered
+$ less -S sequence.gff3 | sort -k3 | grep gene | wc -l
+28
